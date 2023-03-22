@@ -13,4 +13,7 @@ resource "aws_vpc" "eks_vpc" {
 
   # Disabling the IPv6 for the VPC
   assign_generated_ipv6_cidr_block = false
+  tags = {
+    "Name" = "eks-vpc"
+  }
 }
