@@ -13,8 +13,8 @@ provider "aws" {
 
   default_tags {
     tags = {
-      managed_by = "Terraform managed resource"
-      project    = "EKS-Terraform"
+      managed_by    = "Terraform managed resource"
+      project       = "EKS-Terraform"
     }
   }
 }
