@@ -3,7 +3,7 @@ resource "aws_route_table" "public_1" {
   vpc_id = aws_vpc.eks_vpc.id
 
   tags = {
-    "Name" = "EKS Public Route Table"
+    "Name" = "${local.name_suffix}-EKS Public Route Table"
   }
 }
 
