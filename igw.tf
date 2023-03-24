@@ -3,6 +3,6 @@ resource "aws_internet_gateway" "eks_igw" {
   vpc_id = aws_vpc.eks_vpc.id
 
   tags = {
-    "Name" = "${local.name_suffix}-EKS-IGW"
+    "Name" = "${local.name_suffix}-IGW"
   }
 }

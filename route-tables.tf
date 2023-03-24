@@ -3,7 +3,7 @@ resource "aws_route_table" "public_1" {
   vpc_id = aws_vpc.eks_vpc.id
 
   tags = {
-    "Name" = "${local.name_suffix}-EKS-Public-Route-Table"
+    "Name" = "${local.name_suffix}-Public-Route-Table"
   }
 }
 
@@ -22,7 +22,7 @@ resource "aws_route_table" "private_1" {
   vpc_id = aws_vpc.eks_vpc.id
 
   tags = {
-    "Name" = "${local.name_suffix}-EKS-Private-Route-Table-1"
+    "Name" = "${local.name_suffix}-Private-Route-Table-1"
   }
 }
 
@@ -32,6 +32,6 @@ resource "aws_route_table" "private_2" {
   vpc_id = aws_vpc.eks_vpc.id
 
   tags = {
-    "Name" = "${local.name_suffix}-EKS-Private-Route-Table-2"
+    "Name" = "${local.name_suffix}-Private-Route-Table-2"
   }
 }
