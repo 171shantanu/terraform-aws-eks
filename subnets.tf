@@ -33,10 +33,9 @@ resource "aws_subnet" "public_2" {
 
 #Adding private subnet 1
 resource "aws_subnet" "private_1" {
-  vpc_id                  = aws_vpc.eks_vpc.id
-  cidr_block              = var.private_sub_cidrs[0]
-  availability_zone       = data.aws_availability_zones.az.names[0]
-  map_public_ip_on_launch = true
+  vpc_id            = aws_vpc.eks_vpc.id
+  cidr_block        = var.private_sub_cidrs[0]
+  availability_zone = data.aws_availability_zones.az.names[0]
 
   tags = {
     "Name"                            = "${local.name_suffix}-private-us-east-1a"
@@ -47,10 +46,9 @@ resource "aws_subnet" "private_1" {
 
 #Adding private subnet 2
 resource "aws_subnet" "private_2" {
-  vpc_id                  = aws_vpc.eks_vpc.id
-  cidr_block              = var.private_sub_cidrs[1]
-  availability_zone       = data.aws_availability_zones.az[1]
-  map_public_ip_on_launch = true
+  vpc_id            = aws_vpc.eks_vpc.id
+  cidr_block        = var.private_sub_cidrs[1]
+  availability_zone = data.aws_availability_zones.az.names[1]
 
   tags = {
     "Name"                            = "${local.name_suffix}-private-us-east-1b"
