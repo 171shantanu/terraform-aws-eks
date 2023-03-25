@@ -32,7 +32,7 @@ resource "aws_iam_role_policy_attachment" "eks_role_policy_attachement" {
 resource "aws_eks_cluster" "eks_cluster" {
   name     = "${local.name_suffix}-Cluster-1-TF"
   role_arn = aws_iam_role.eks_iam_role.arn
-  version  = "1.24"
+  version  = var.eks_version
 
   vpc_config {
     endpoint_public_access  = true
@@ -51,6 +51,6 @@ resource "aws_eks_cluster" "eks_cluster" {
 
   tags = {
     "Name"    = "${local.name_suffix}-Cluster-1-TF"
-    "Version" = "1.24"
+    "Version" = var.eks_version
   }
 }

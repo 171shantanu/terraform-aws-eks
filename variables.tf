@@ -21,9 +21,9 @@ variable "env" {
 
 # variable for the AWS region.
 variable "aws_region" {
+  type        = string
   default     = "us-east-1"
   description = "AWS Region"
-  type        = string
 }
 
 # variable for the CIDR block of the VPC
@@ -59,4 +59,11 @@ variable "ec2_instance_type" {
   type        = string
   description = "EC2 Instance Type"
   default     = "t2.micro"
+}
+
+#variable for the eks version
+variable "eks_version" {
+  type        = number
+  description = "EKS Version"
+  default     = 1.25
 }

@@ -62,7 +62,7 @@ resource "aws_eks_node_group" "eks_node_group" {
   ]
 
   #Specifying the type of instance to be used using a variable
-  instance_types = var.ec2_instance_type
+  instance_types = [var.ec2_instance_type]
 
   # The type of AMI that you want to associate with the EKS Node Group
   # The valid values are AL2_x86_64, Al2_x86_64_GPU, AL2_ARM_64
@@ -78,7 +78,7 @@ resource "aws_eks_node_group" "eks_node_group" {
   force_update_version = false
 
   # K8s version
-  version = "1.24"
+  version = var.eks_version
 
   # Key-value map of Kubernetes labels
   labels = {
