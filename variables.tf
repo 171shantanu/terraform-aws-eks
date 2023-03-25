@@ -53,3 +53,10 @@ variable "private_sub_cidrs" {
   description = "Private Subnet CIDR's"
   default     = ["10.0.3.0/28", "10.0.4.0/28"]
 }
+
+# variable for the EC2 instance type
+variable "ec2_instance_type" {
+  type        = string
+  description = "EC2 Instance Type"
+  default     = "t2.micro"
+}
